@@ -1,0 +1,8 @@
+body{
+   width: 100%;
+}
+
+.links-section{
+   display: flex;
+   justify-content: space-evenly;
+}
