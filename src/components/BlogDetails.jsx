@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "../client";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function BlogDetails() {
   const [blog, setBlog] = useState();
   const { id } = useParams();
   
   // console.log(useParams()) BLOG ID check
-
 
   useEffect(() => {
     client
@@ -21,39 +24,40 @@ export default function BlogDetails() {
 
 
 
-  // return (
-  //   <>
-  //   blog 아이디: {id}
-  //   </>
-  // )
-
   return (
     <>
-    <div>상품디테일</div>
+  
+    <Container>
+<Row>
+
+<Col>
+{blog ? (
+  <div>
     
-      {blog ? (
-        <div className="blogPage">
-          
-          <p>{blog.author}</p>
+    <p>{blog.author}</p>
 
-          {blog.image && <img src={blog.image.fields.file.url} alt="Blog Image" />}
-          
+    {blog.image && <img src={blog.image.fields.file.url} alt="Blog Image" />}
+    
 
-        </div>
-      ) : (
-        "Loading...."
-      )}
+  </div>
+) : (
+  "Loading...."
+)}
+</Col>
 
 
-{/* 
-     <button
-        onClick={() => {
-          navigate(`/blogs/${??}`);  
-        }}
-      >
-        drinks2
-      </button> */}
+<Col> 
+Food Detail: 
+
+</Col>
+
+
+  
+</Row>
+    </Container>
    
+
+
 
     </>
   );
