@@ -3,11 +3,10 @@ import Blogs from "./components/Blogs";
 import BlogDetails from "./components/BlogDetails";
 import './App.css';
 import Navbar from "./components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useEffect, useState } from 'react';
 import { client } from './client';
-// import FoodDetail from './components/FoodDetail';
-
 // console.log(import.meta.env)
 function App() {
 
@@ -15,17 +14,39 @@ function App() {
     <>
      
      <div>
-     <h1> Navbar </h1>
+
      <Navbar />
      </div>
     
      
      
       <Routes>
-        <Route path="/" element={<Blogs />} />
+        <Route path="/" element={<Blogs />} />  
+        {/* 전체상품페이지 */}
+
         <Route path="/blogs/:id" element={<BlogDetails />} /> 
-        {/* <Route path="/blogs/:id" element={<FoodDetail />} />  */}
       </Routes>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <h1> Footer</h1>
     </>
   );

@@ -1,8 +1,36 @@
 body{
    width: 100%;
 }
-
+/* 
 .links-section{
    display: flex;
    justify-content: space-evenly;
+
+   background-color: rgb(71, 77, 144);
+   height: 3rem;
+} */
+
+.menu-list{
+   display: flex;
+   list-style-type: none;
 }
+.menu-list li {
+   padding: 5rem;
+}
+.menu-area {
+   display: flex;
+   justify-content: center;
+}
+
+.search-box{
+   border-bottom: 1px solid black;
+   position: absolute;
+   right: 20px;
+   padding: 5px;
+ }
+ .search-box input{
+   border:none;
+   margin-left:5px;
+ }
+ .search-box input:focus {
+   outline:none

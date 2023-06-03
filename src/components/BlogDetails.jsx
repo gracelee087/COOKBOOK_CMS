@@ -5,8 +5,7 @@ import { client } from "../client";
 export default function BlogDetails() {
   const [blog, setBlog] = useState();
   const { id } = useParams();
-
-
+  
   // console.log(useParams()) BLOG ID check
 
 
@@ -43,6 +42,7 @@ export default function BlogDetails() {
         "Loading...."
       )}
 
+<div>상품디테일</div>
 {/* 
      <button
         onClick={() => {
