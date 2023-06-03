@@ -29,6 +29,8 @@ export default function BlogDetails() {
 
   return (
     <>
+    <div>상품디테일</div>
+    
       {blog ? (
         <div className="blogPage">
           
@@ -42,7 +44,7 @@ export default function BlogDetails() {
         "Loading...."
       )}
 
-<div>상품디테일</div>
+
 {/* 
      <button
         onClick={() => {

@@ -26,7 +26,7 @@ function App() {
 
         <Route path="/blogs/:id" element={<BlogDetails />} /> 
       </Routes>
-
+``
 
 
 
