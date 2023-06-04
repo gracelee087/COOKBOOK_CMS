@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Blog( {item} ) { //blog 프롬스로 넘겨줘야함 
   const navigate = useNavigate()
-
+ 
   const showDetail=() => {
     navigate(`/blogs/${item.sys.id}`)
+
   }
 
   return (
@@ -12,7 +13,8 @@ export default function Blog( {item} ) { //blog 프롬스로 넘겨줘야함
 
 <div className="blog-item" onClick={showDetail}>
       <p>{item.fields.title}</p>
-      {item.fields.image && <img src={item.fields.image.fields.file.url} alt="Blog Image" style={{ width: "100%", height: "auto" }}/>}
+      {item.fields.image && <img src={item.fields.image.fields.file.url} alt="Blog Image" style={{ width: "100%", height: "190px" }}/>}
+
 
       </div>
 
