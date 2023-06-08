@@ -1,14 +1,7 @@
+
 body{
    width: 100%;
 }
-/* 
-.links-section{
-   display: flex;
-   justify-content: space-evenly;
-
-   background-color: rgb(71, 77, 144);
-   height: 3rem;
-} */
 
 .menu-list{
    display: flex;
@@ -35,4 +28,3 @@ body{
  .search-box input:focus {
    outline:none
 
-  

@@ -1,48 +1,70 @@
-import Blog from "./Blog";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { client } from "../client";
+import Blog from "./Blog";
+
 export default function Blogs() {
-  const [blogs, setBlogs] = useState([]); //가져온상품 UI에 보여주기
+  const [blogs, setBlogs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     client
       .getEntries()
       .then((response) => {
-        console.log(response.items) //items가 모든 상품을 의미한다.
+        console.log(response.items);
         setBlogs(response.items);
       })
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    setFilteredBlogs(
+      blogs.filter((blog) =>
+        blog.fields.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }, [blogs, searchTerm]);
+
+  const handleCategoryClick = (category) => {
+    setFilteredBlogs(
+      blogs.filter((blog) =>
+        blog.fields.category === category
+      )
+    );
+  };
+
+  const getTextValue = (entry) => {
+    if (entry.fields && entry.fields.shortText) {
+      return entry.fields.shortText;
+    }
+    return "";
+  };
+
   return (
     <div>
+      <div className='search-box' style={{ position: "fixed", top: 0, right: 0 }}>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
 
-<div>전체상품페이지</div>
-  
-
-<Container>
-<Row>
-{blogs.map((menu) => ( 
-<Col lg={3} >
-  <Blog item={menu} key={menu.sys.id}/>
-</Col>
-))}
-
-</Row>
-</Container>
-
-
-
-
-      {/* {blogs.map((blog) => {
-        return <Blog blog={blog} key={blog.sys.id} />;
-      })} */}
-  
-
+      <Container>
+        <Row>
+          {filteredBlogs.map((blog) => (
+            <Col lg={3} key={blog.sys.id}>
+              <Blog item={blog} textValue={getTextValue(blog)} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }
