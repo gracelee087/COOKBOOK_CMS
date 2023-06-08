@@ -3,10 +3,18 @@ body{
    width: 100%;
 }
 
-.menu-list{
-   display: flex;
-   list-style-type: none;
+.blog-item {
+padding: 10px;
+margin: 3%; 
 }
+
+
+.menu-list {
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+ }
+ 
 .menu-list li {
    padding: 5rem;
 }

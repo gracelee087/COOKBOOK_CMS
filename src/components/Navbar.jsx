@@ -15,15 +15,21 @@ export default function Navbar({ handleCategoryClick }) {
 
   return (
     <div>
-      <div>
-        {/* Home NavLink */}
-        <NavLink to="/" activeClassName="active">
-          <FontAwesomeIcon icon={faHome} style={{ color: "gray", fontSize: "50px" }} />
-        </NavLink>
-      </div>
+     
 
       <div className="menu-area">
         <ul className="menu-list">
+
+       {/* Home NavLink */}
+       <li className="home-icon">
+  <NavLink to="/" activeClassName="active">
+    <FontAwesomeIcon icon={faHome} style={{ color: "gray", fontSize: "25px" }} />
+  </NavLink>
+</li>
+
+
+
+
           {menuList.map((menu, index) => (
             <button
               key={index}

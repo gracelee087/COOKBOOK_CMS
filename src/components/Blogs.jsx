@@ -6,6 +6,9 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { client } from "../client";
 import Blog from "./Blog";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,6 +52,8 @@ export default function Blogs() {
   return (
     <div>
       <div className='search-box' style={{ position: "fixed", top: 0, right: 0 }}>
+      <FontAwesomeIcon icon={faSearch} style={{ color: "gray", fontSize: "20px" }} />
+       
         <input
           type="text"
           value={searchTerm}
