@@ -6,8 +6,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { client } from "./client";
-import { createClient } from 'contentful';
-import Breakfast from './components/Breakfast';
+
 
 
 function App() {

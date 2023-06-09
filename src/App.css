@@ -18,6 +18,8 @@ margin: 3%;
 .menu-list li {
    padding: 5rem;
 }
+
+
 .menu-area {
    display: flex;
    justify-content: center;

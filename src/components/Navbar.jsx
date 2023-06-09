@@ -11,7 +11,7 @@ export default function Navbar() {
   const [posts, setPosts] = useState([]);
 
   return (
-    <div>
+    <div className="navbar-container">
       <div className="menu-area">
         <ul className="menu-list">
 
@@ -23,23 +23,24 @@ export default function Navbar() {
           </li>
 
           {menuList.map((menu, index) => (
-            <Link
-              key={index}
-              to={`/${menu.toLowerCase()}`}
-              style={{
-                backgroundColor: "white",
-                padding: "50px",
-                margin: "5px",
-                border: "none",
-                color: "black",
-              }}
-            >
-              {menu}
-            </Link>
+            <li key={index}>
+              <Link
+                to={`/${menu.toLowerCase()}`}
+                style={{
+                  backgroundColor: "white",
+                  padding: "50px",
+                  margin: "5px",
+                  border: "none",
+                  color: "black",
+                }}
+              >
+                {menu}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
-      
+
       {/* Routes to handle different components */}
       <Routes>
         <Route path="/breakfast" element={<Breakfast />} />
