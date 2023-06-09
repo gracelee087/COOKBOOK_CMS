@@ -37,7 +37,7 @@ function App() {
 
       <div>
         <Navbar handleCategoryClick={handleCategoryClick} />
-      </div>
+      </div>  
 
       <Routes>
         <Route path="/" element={<Blogs filteredBlogs={filteredBlogs} />} />
