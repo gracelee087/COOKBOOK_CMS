@@ -7,7 +7,7 @@ import Dinner from './Dinner';
 import Dessert from './Dessert';
 
 export default function Navbar() {
-  const menuList = ["Breakfast", "Lunch", "Dessert"];
+  const menuList = ["Breakfast", "Dinner", "Dessert"];
   const [posts, setPosts] = useState([]);
 
   return (

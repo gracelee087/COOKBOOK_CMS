@@ -28,6 +28,9 @@ function Breakfast() {
 
 
           <h2>{blog.fields.title}</h2>
+
+
+          
           {blog.fields.image && (
             <img
               src={blog.fields.image.fields.file.url}
