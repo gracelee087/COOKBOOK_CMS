@@ -39,7 +39,7 @@ function App() {
         <Route path="/blogs/:id" element={<BlogDetails />} />
       </Routes>
 
-      <h1>Footer</h1>
+      <h1>Footer1</h1>
     </>
   );
 }
