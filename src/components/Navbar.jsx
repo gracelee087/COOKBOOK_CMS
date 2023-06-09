@@ -11,8 +11,10 @@ export default function Navbar() {
   const [posts, setPosts] = useState([]);
 
   return (
+<div>
+
     <div className="navbar-container">
-      <div className="menu-area">
+    <div className="menu-area" style={{ height: "140px" }}>
         <ul className="menu-list">
 
           {/* Home NavLink */}
@@ -41,12 +43,13 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Routes to handle different components */}
+
       <Routes>
         <Route path="/breakfast" element={<Breakfast />} />
         <Route path="/dinner" element={<Dinner />} />
         <Route path="/dessert" element={<Dessert />} />
       </Routes>
+    </div>
     </div>
   );
 }

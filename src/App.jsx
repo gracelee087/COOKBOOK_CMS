@@ -6,11 +6,10 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { client } from "./client";
-
+import Footer from "./components/Footer";
 
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState([]);
 
 
@@ -27,8 +26,15 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
+
+
+
   return (
     <>
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "20%" }}>
+        <img src="/logo.jpg" alt="My Image"/>
+      </div>
+
       <div>
         <Navbar handleCategoryClick={handleCategoryClick} />
       </div>
@@ -37,8 +43,10 @@ function App() {
         <Route path="/" element={<Blogs filteredBlogs={filteredBlogs} />} />
         <Route path="/blogs/:id" element={<BlogDetails />} />
       </Routes>
+<div>
 
-      <h1>Footer1</h1>
+  <Footer />
+</div>
     </>
   );
 }

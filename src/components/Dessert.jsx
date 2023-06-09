@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { client } from "../client";
-
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Dessert() {
   const [blogs, setBlogs] = useState([]);
@@ -22,25 +22,24 @@ function Dessert() {
   }, []);
 
   return (
-    <div>
-      {blogs.map((blog) => (
-        <div key={blog.sys.id}>
-          <h2>{blog.fields.title}</h2>
-  
-          {blog.fields.image && (
-            <img
-              src={blog.fields.image.fields.file.url}
-              alt={blog.fields.image.fields.title}
-            />
-          )}
-          {/* {blog.fields.body && (
+    <Container>
+      <Row>
+        {blogs.map((blog) => (
+          <Col md={4} key={blog.sys.id}>
             <div>
-              {documentToReactComponents(blog.fields.body)}
+              <h2 style={{ fontSize: '25px' }}>{blog.fields.title}</h2>
+              {blog.fields.image && (
+                <img
+                  src={blog.fields.image.fields.file.url}
+                  alt={blog.fields.image.fields.title}
+                  style={{ width: '250px', height: '200px' }}
+                />
+              )}
             </div>
-          )} */}
-        </div>
-      ))}
-    </div>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
 

@@ -24,7 +24,7 @@ export default function BlogDetails() {
       <Row>
 
       {/* food image */}
-        <Col >
+      <Col xs={12}>
           {blog ? (
             <div>
               <p>{blog.author}</p>
@@ -34,6 +34,8 @@ export default function BlogDetails() {
             "Loading...."
           )}
         </Col>
+
+
 
 {/* BLOG TITLE */}
         <Col>
