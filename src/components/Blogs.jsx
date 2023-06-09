@@ -34,13 +34,13 @@ export default function Blogs() {
     );
   }, [blogs, searchTerm]);
 
-  const handleCategoryClick = (category) => {
-    setFilteredBlogs(
-      blogs.filter((blog) =>
-        blog.fields.category === category
-      )
-    );
-  };
+  // const handleCategoryClick = (category) => {
+  //   setFilteredBlogs(
+  //     blogs.filter((blog) =>
+  //       blog.fields.category === category
+  //     )
+  //   );
+  // };
 
   const getTextValue = (entry) => {
     if (entry.fields && entry.fields.shortText) {
