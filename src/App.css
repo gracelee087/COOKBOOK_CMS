@@ -1,8 +1,28 @@
-body{
-   width: 100%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  width: 100%;
 }
 
-.links-section{
-   display: flex;
-   justify-content: space-evenly;
+html {
+  background-color: #f5efe7;
+  color: #482121;
+}
+
+/* .blogtitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.blogauthor {
+  color: #a7ecee;
+} */
+
+.firstPageImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  align-self: center;
 }

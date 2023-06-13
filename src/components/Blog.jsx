@@ -1,23 +1,26 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Blog({ blog }) {
+export default function Blog({ item }) {
   const navigate = useNavigate();
 
+  const showDetail = () => {
+    navigate(`/blogs/${item.sys.id}`);
+  };
+
   return (
-    <>
-      <p>{blog.fields.title}</p>
-    
-    
-      <button
-        onClick={() => {
-          navigate(`/blogs/${blog.sys.id}`);  //blogs/다음으로 넘어갈 id로 찾는 변수생성 // 블로그내에 시스템의 아이디라는 뜻. 
-        }}
-      >
-       Details 
-      </button>
-   
-   
-   
-    </>
+    <div>
+      <div onClick={showDetail}>
+        <p className="pb-5 font-main">{item.fields.title}</p>
+        <div className="flex justify-center">
+          {item.fields.image && (
+            <img
+              className="firstPageImage mb-5"
+              src={item.fields.image.fields.file.url}
+              alt="Blog Image"
+            />
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

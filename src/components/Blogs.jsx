@@ -1,5 +1,5 @@
 import Blog from "./Blog";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { client } from "../client";
 
 export default function Blogs() {
@@ -9,7 +9,7 @@ export default function Blogs() {
     client
       .getEntries()
       .then((response) => {
-        console.log(response.items)
+        console.log(response.items);
         setBlogs(response.items);
       })
       .catch((err) => console.log(err));
@@ -18,9 +18,12 @@ export default function Blogs() {
   return (
     <>
       {/* creation form/ filtration */}
-      {blogs.map((blog) => {
-        return <Blog blog={blog} key={blog.sys.id} />;
-      })}
+      <div className="grid grid-cols-4 justify-items-center px-64">
+        {blogs.map((blog) => {
+          return <Blog item={blog} key={blog.sys.id} />;
+        })}
+      </div>
+
       {/* pagination */}
     </>
   );
